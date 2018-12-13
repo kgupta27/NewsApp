@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>News Sources</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-bounce>
+  <ion-slides pager>
+    <!-- <ion-slide *ngFor="let news of newsSource.articles" [ngStyle]="{'background' : 'url('+ news.urlToImage + ') center center no-repeat'}" class="introslides" (click)="newsItemSelected(news.url)"> -->
+      <ion-slide *ngFor="let news of newsSource.articles" (click)="newsItemSelected(news.url)">
+      <div class="news-title" [innerHTML]="news.source.name"></div>
+      <p [innerHTML]="news.title"></p>
+      <img [src]="news.urlToImage"/>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
